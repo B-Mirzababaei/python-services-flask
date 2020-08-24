@@ -3,10 +3,8 @@ import traceback
 from flask import current_app, request
 from flask_restful import Resource, reqparse, abort
 from pathlib import Path
-import pytesseract
-from PIL import Image
 from auth import auth
-# import werkzeug
+
 
 parser = reqparse.RequestParser()
 
@@ -19,7 +17,7 @@ class CLAIM(Resource):
     def post(self):
         # images_root_path = Path(current_app.config['IMAGES_ROOT'])
         # uploads_path = Path(images_root_path / 'uploads')
-        # uploads_path.mkdir(parents=True, exist_ok=True)
+        # uploads_path.mkdir(arents=True, exist_ok=True)
         # allowed_extensions = {'png', 'jpg', 'jpeg'}  # 'pdf',
         # custom_tesseract_config = r'--oem 3 --psm 6'
         #

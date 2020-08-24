@@ -13,8 +13,8 @@ api = Api(app)
 # Actually setup the Api resource routing here
 #
 # TODO: Define Custom Error Messages
-api.add_resource(CLAIM, '/claim')  # first part is the class name in claim.py, the second part is url of request
-api.add_resource(WARRANT, '/warrant')
+api.add_resource(CLAIM, '/v1/claim')  # first part is the class name in claim.py, the second part is url of request
+api.add_resource(WARRANT, '/v1/warrant')
 
 if __name__ == '__main__':
     app.run(debug=True, port=8030)

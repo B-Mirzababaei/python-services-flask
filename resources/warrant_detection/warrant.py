@@ -3,8 +3,6 @@ import traceback
 from flask import current_app, request
 from flask_restful import Resource, reqparse, abort
 from pathlib import Path
-import pytesseract
-from PIL import Image
 from auth import auth
 # import werkzeug
 
