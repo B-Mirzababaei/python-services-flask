@@ -14,7 +14,7 @@ parser = reqparse.RequestParser()
 # Recognize text from image
 # by accepting either a filename or upload file stream
 # TODO: Return minifed json result
-class OCR(Resource):
+class CLAIM(Resource):
     @auth.login_required
     def post(self):
         # images_root_path = Path(current_app.config['IMAGES_ROOT'])
@@ -38,7 +38,7 @@ class OCR(Resource):
         if args['text']:
 
             lable = args['text']
-            return {"lable": "this_is_service_result" + ": " + lable}, 200
+            return {"lable": "CLAIM_IS_POSITIVE"}, 200
             # if not text.is_absolute():
             #     image_absolute_path = images_root_path / Path(args['text'])
             # else:
