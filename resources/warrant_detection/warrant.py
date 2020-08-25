@@ -7,14 +7,25 @@ from auth import auth
 # import werkzeug
 
 parser = reqparse.RequestParser()
-
+# region global variables
+global global_var_warrant
+global_var_warrant = {'w1':"W1", 'w2':'W2'}
+print("global global_var_warrant")
+# endregion
 
 # Recognize text from image
 # by accepting either a filename or upload file stream
 # TODO: Return minifed json result
 class WARRANT(Resource):
+
+    def __init__(self):
+        pass
     @auth.login_required
     def post(self):
+        global global_var_warrant
+
+        print(global_var_warrant['c2'])
+
         # images_root_path = Path(current_app.config['IMAGES_ROOT'])
         # uploads_path = Path(images_root_path / 'uploads')
         # uploads_path.mkdir(parents=True, exist_ok=True)

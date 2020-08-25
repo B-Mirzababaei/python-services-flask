@@ -8,7 +8,7 @@ from resources.claim_detection.claim import CLAIM
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
 api = Api(app)
-
+print("global app")
 ##
 # Actually setup the Api resource routing here
 #

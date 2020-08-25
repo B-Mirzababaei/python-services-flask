@@ -4,8 +4,9 @@ import os
 import flask
 from . import development, testing, production
 
-
+print("global config/init")
 def create_app(config_name='default'):
+    print("create_app")
     """Flask app factory
 
     :config_name: a string object.
@@ -45,6 +46,7 @@ def set_app_config_keys(app, settings):
     :returns: None
 
     """
+    print("set_app_config_keys")
     # create a unique dict with all config vars
     all_config_vars = dict(
         list(settings.FLASK_VARS.items()) +
@@ -68,6 +70,7 @@ def development_config(app):
     :returns: None
 
     """
+    print("development_config")
     set_app_config_keys(app, development)
 
 
@@ -79,6 +82,7 @@ def testing_config(app):
     :returns: None
 
     """
+    print("testing_config")
     set_app_config_keys(app, testing)
 
 
@@ -90,6 +94,7 @@ def production_config(app):
     :returns: None
 
     """
+    print("production_config")
     set_app_config_keys(app, production)
 
 

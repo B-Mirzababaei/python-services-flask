@@ -5,16 +5,27 @@ from flask_restful import Resource, reqparse, abort
 from pathlib import Path
 from auth import auth
 
-
 parser = reqparse.RequestParser()
 
+# region global variables
+global global_var_claim
+global_var_claim = {'c1':"C1", 'c2':'C2'}
+print("global global_var_claim")
+# endregion
 
 # Recognize text from image
 # by accepting either a filename or upload file stream
 # TODO: Return minifed json result
 class CLAIM(Resource):
+    def __init__(self):
+        pass
+        # self.global_var_claim = {'c1':"C1", 'c2':'C2'}
+        # print('global_var_claim is loaded')
+
     @auth.login_required
     def post(self):
+        global global_var_claim
+        print(global_var_claim['c2'])
         # images_root_path = Path(current_app.config['IMAGES_ROOT'])
         # uploads_path = Path(images_root_path / 'uploads')
         # uploads_path.mkdir(arents=True, exist_ok=True)
